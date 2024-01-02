@@ -1,0 +1,64 @@
+const tempMoviesData = [
+    {
+      imdbID: "tt1234567",
+      Title: "The Adventure Begins",
+      Year: 2020,
+      Poster:
+        "https://webneel.com/daily/sites/default/files/images/daily/09-2019/2-movie-poster-design-aladdin-disney-glossy-composite.jpg",
+    },
+    {
+      imdbID: "tt2345678",
+      Title: "Beyond the Horizon",
+      Year: 2018,
+      Poster:
+        "https://bst.icons8.com/wp-content/themes/icons8/app/uploads/2019/05/poster-for-movie.png",
+    },
+    {
+      imdbID: "tt3456789",
+      Title: "Eternal Echoes",
+      Year: 2015,
+      Poster:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU5GxV73q2DfG1q_3POTjdD2xbJBhA3pTy4g&usqp=CAU",
+    },
+    {
+      imdbID: "tt4567890",
+      Title: "Infinite Dreams",
+      Year: 2019,
+      Poster:
+        "https://i.pinimg.com/736x/80/c4/9c/80c49c52ee7d8a9d5f0e3b717b545625.jpg",
+    },
+  ];
+  
+  const tempWatchedMovieData = [
+    {
+      imdbID: "tt3456789",
+      Title: "Eternal Echoes",
+      Year: 2015,
+      Poster:
+        "https://webneel.com/daily/sites/default/files/images/daily/09-2019/2-movie-poster-design-aladdin-disney-glossy-composite.jpg",
+      runtime: 158,
+      imdbRating: 9.8,
+      userRating: 7,
+    },
+    {
+      imdbID: "tt4567890",
+      Title: "Infinite Dreams",
+      Year: 2019,
+      Poster:
+        "https://i.pinimg.com/736x/80/c4/9c/80c49c52ee7d8a9d5f0e3b717b545625.jpg",
+      runtime: 88,
+      imdbRating: 6.8,
+      userRating: 3,
+    },
+    {
+      imdbID: "tt5678901",
+      Title: "Whispers in the Dark",
+      Year: 2021,
+      Poster:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU5GxV73q2DfG1q_3POTjdD2xbJBhA3pTy4g&usqp=CAU",
+      runtime: 108,
+      imdbRating: 5.8,
+      userRating: 7,
+    },
+  ];
+  
