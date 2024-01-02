@@ -31,9 +31,15 @@ The project is deployed on Netlify, allowing for easy access and sharing. You ca
 
 ## Project Images
 
+- Live Search
+
 ![Screenshot 2024-01-03 005003](https://github.com/RohanPrasadGupta/CineMatrix_IMDb-Api/assets/90445636/a990809a-35bb-4869-b608-6f1b27c3a3e9)
 
+- Add Own Rating
+
 ![Screenshot 2024-01-03 005036](https://github.com/RohanPrasadGupta/CineMatrix_IMDb-Api/assets/90445636/875edb67-ac4a-4a87-9ba8-5b078c64d009)
+
+- Customized Watched List
 
 ![Screenshot 2024-01-03 005210](https://github.com/RohanPrasadGupta/CineMatrix_IMDb-Api/assets/90445636/0592b128-c66a-46b4-a36b-8e715c840238)
 
