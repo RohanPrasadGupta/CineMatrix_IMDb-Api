@@ -144,7 +144,7 @@ function Loader() {
 function ErrorMessage({ message }) {
   return (
     <>
-      <span> ⛔</span> {message}
+      <span className=" mt-6"> ⛔</span> {message}
     </>
   );
 }
@@ -190,7 +190,7 @@ function FoundMovie({ movies }) {
 
 function Main({ children }) {
   return (
-    <div className=" p-6 bg-black/80 h-screen grid grid-cols-2  text-center">
+    <div className=" p-6 bg-black/80 h-screen  grid grid-cols-2  text-center">
       {children}
     </div>
   );
@@ -201,7 +201,7 @@ function Box({ children }) {
 
   return (
     <div
-      className={`max-w-sm rounded-2xl mt-20 overflow-hidden shadow-lg bg-black/50 text-white ml-28`}
+      className={` w-[70%] rounded-2xl mt-20  shadow-lg bg-black/50 text-white ml-28 overflow-auto `}
     >
       <button onClick={() => setIsOpen((cur) => !cur)}>
         {isOpen === true ? "➖" : "➕"}
@@ -279,7 +279,7 @@ function WatchedSummary({ watched }) {
   const avgRunTime = Math.round(average(watched.map((movie) => movie.runtime)));
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-black/40 p-2 mb-6">
+    <div className=" rounded overflow-hidden shadow-lg bg-black/40 p-2 mb-6">
       <div className=" m-2">
         <h1>MOVIES YOU WATCHED</h1>
       </div>
@@ -310,7 +310,7 @@ function WatchedMovieList({ watched, onDeleteWatchedMovie }) {
 function WatchedMovie({ movie, onDeleteWatchedMovie }) {
   return (
     <li>
-      <div className=" grid grid-cols-2 m-2 items-center">
+      <div className=" grid grid-cols-2 m-2 items-center bg-black/30 p-2 ">
         <div>
           <img
             className=" w-20 h-28 rounded-xl"
@@ -318,17 +318,17 @@ function WatchedMovie({ movie, onDeleteWatchedMovie }) {
             alt={movie.title}
           />
         </div>
-        <div className=" flex flex-col text-left -ml-10 mb-2">
-          <p>{movie.title}</p>
-          <div className=" flex flex-row">
+        <div className=" flex flex-col text-left gap-1 -ml-10 mb-2">
+          <p className=" font-bold text-2xl">{movie.title}</p>
+          <div className=" flex flex-row gap-3">
             <p> ⭐ {movie.imdbRating}</p>
             <p className=" ml-2 mr-2"> 🌟 {movie.userRating}</p>
             <p> ⌛ {movie.runtime}</p>
+
+            <button onClick={() => onDeleteWatchedMovie(movie.imdbID)}>
+              &#10060;
+            </button>
           </div>
-          <button onClick={() => onDeleteWatchedMovie(movie.imdbID)}>
-            {" "}
-            &#10060;{" "}
-          </button>
         </div>
       </div>
     </li>
@@ -432,33 +432,41 @@ function MovieDetails({
 
   return (
     <div>
-      <div className=" m-4 p-2 cursor-pointer border-2 w-10 h-10 rounded-xl hover:-translate-y-1 ">
-        <button onClick={onCloseSelectMovie}> &larr; </button>
+      <div className=" m-4 p-1 cursor-pointer border-2 w-10 h-10 rounded-xl hover:-translate-y-1 ">
+        <button className=" items-center" onClick={onCloseSelectMovie}>
+          &larr;
+        </button>
       </div>
       {loading ? (
         <Loader />
       ) : (
         <>
-          <div>
+          <div className=" grid grid-cols-2 p-3 gap-3">
             <div>
-              <img src={poster} alt={title} />
+              <img
+                className=" h-48 w-36 rounded-md shadow-2xl"
+                src={poster}
+                alt={title}
+              />
             </div>
-            <div>
-              <h1>{title}</h1>
-              <h3>
+            <div className=" flex flex-col gap-2 mt-6 mr-14">
+              <p className=" text-3xl font-bold capitalize underline underline-offset-4">
+                {title}
+              </p>
+              <p>
                 {released} &bull;
-                <span>{runtime}</span>
-              </h3>
+                <span className=" mr-3">{runtime}</span>
+              </p>
               <h3>{genre}</h3>
               <h3>
                 ⭐{imdbRating}
-                <span>IMDb Rating</span>
+                <span> IMDb Rating</span>
               </h3>
             </div>
           </div>
 
-          <section>
-            <div>
+          <section className=" flex flex-col p-2">
+            <div className=" bg-black/50 p-4  flex flex-col items-center h-16 mb-2">
               {!isAlreadyRated ? (
                 <>
                   <StarRating
@@ -467,7 +475,10 @@ function MovieDetails({
                     onSetRating={setUserRating}
                   />
                   {userRating > 0 && (
-                    <button onClick={handleAddWatched}>
+                    <button
+                      className=" bg-green-400 mt-3 font-bold rounded-lg p-2 text-black"
+                      onClick={handleAddWatched}
+                    >
                       + Add To Watched List
                     </button>
                   )}
@@ -477,11 +488,10 @@ function MovieDetails({
               )}
             </div>
 
-            <div>{plot}</div>
+            <div className=" mt-8">{plot}</div>
             <div>
-              <p>Staring : {actors}</p>
-              <p>Directed by : </p>
-              {director}
+              <p className=" mt-2 text-fuchsia-600 ">Staring : {actors}</p>
+              <p className=" mb-2 text-fuchsia-400">Directed by : {director}</p>
             </div>
           </section>
         </>
