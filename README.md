@@ -25,7 +25,7 @@ Welcome to my Movie Rating and Review Project! <h1> CINE MATRIX </h1> This proje
 
 ## Deployment
 
-The project is deployed on Netlify, allowing for easy access and sharing. You can check out the deployed version <a href='https://delightful-puppy-bf7ffb.netlify.app/'> Here </a>
+The project is deployed on Netlify, allowing for easy access and sharing. You can check out the deployed version <a href='https://delightful-puppy-bf7ffb.netlify.app/](https://cine-matrix-movie-review-rate.netlify.app/'> Here </a>
 
 **Note:** Due to the OMDB API limitations, it may not function as expected in the deployed version. For the full experience, consider running the project locally by following the instructions below.
 
