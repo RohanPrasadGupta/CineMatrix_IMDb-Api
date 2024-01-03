@@ -15,6 +15,12 @@ export default function App() {
   const [error, setError] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
+
+  // Comment the below line to run locally on Your Device
+   alert(
+    `Unable to deploy as the API is a paid service. View it on my GitHub and run locally to explore: https://github.com/RohanPrasadGupta/CineMatrix_IMDb-Api`
+  );
+
   function ClickSelectedMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
   }
